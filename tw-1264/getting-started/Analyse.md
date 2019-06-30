@@ -51,26 +51,31 @@ Mit dem Multimeter habe ich jedoch folgende Verbindungen gefunden:
 Puffer
 ===
 
-Mit dem Durchgangsprüfer sind folgende Verbindungen zum Pufferchip zu erkennen:
+Mit dem Durchgangsprüfer sind folgende Verbindungen zum Pufferchip ([Datenblatt HD74HC240P](hd74hc240p.pdf)) zu erkennen:
 
-Output JP2 Pin 1 - U2 Pin 1, 10 und 19
-Output JP2 Pin 2 - U2 Pin 3
-Output JP2 Pin 3 - U2 Pin 7
-Output JP2 Pin 4 - U2 Pin 5
-Output JP2 Pin 5 - N/V
-Output JP2 Pin 6 - N/V
-Output JP2 Pin 7 - U2 Pin 9
-Output JP2 Pin 8 - N/V
-Output JP2 Pin 9 - N/V
-Output JP2 Pin 10 - U2 Pin 1, 10 und 19
-
-Input JP1 Pin 1 - U1 Pin 1, 10 und 19
-Input JP1 Pin 2 - U1 Pin 2
-Input JP1 Pin 3 - U1 Pin 6
-Input JP1 Pin 4 - U1 Pin 4
+Input JP1 Pin 1 - U1 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
+Input JP1 Pin 2 - U1 Pin 2 (`1A1`)
+Input JP1 Pin 3 - U1 Pin 6 (`1A3`)
+Input JP1 Pin 4 - U1 Pin 4 (`1A2`)
 Input JP1 Pin 5 - N/V
 Input JP1 Pin 6 - N/V
-Input JP1 Pin 7 - U1 Pin 8
+Input JP1 Pin 7 - U1 Pin 8 (`1A4`)
 Input JP1 Pin 8 - N/V
 Input JP1 Pin 9 - N/V
-Input JP1 Pin 10 - U1 Pin 1, 10 und 19
+Input JP1 Pin 10 - U1 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
+
+Output JP2 Pin 1 - U2 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
+Output JP2 Pin 2 - U2 Pin 3 (`2Y4`)
+Output JP2 Pin 3 - U2 Pin 7 (`2Y2`)
+Output JP2 Pin 4 - U2 Pin 5 (`2Y3`)
+Output JP2 Pin 5 - N/V
+Output JP2 Pin 6 - N/V
+Output JP2 Pin 7 - U2 Pin 9 (`2Y1`)
+Output JP2 Pin 8 - N/V
+Output JP2 Pin 9 - N/V
+Output JP2 Pin 10 - U2 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
+
+Es erscheint sinnig, dass auf `JP1` lauter Eingänge `A` und auf `JP2` lauter Ausgänge `Y` belegt sind.
+
+Es scheint als lägen bei beiden Puffern `G1` und `G2` dauerhaft auf `GND`, womit der dritte Ausgangsstatus (`Z`, high impedance) nie benutzt wird. Somit wird der Eingang `A` immer invertiert an den Ausgang `Y` übergeben.
+
