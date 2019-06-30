@@ -9,7 +9,7 @@ Jedes Segment besteht aus 16 weißen LEDs.
 
 Dazu gibt es eine Platine mit der Bezeichnung TW-1222, die einen Punkt aus 4 LEDs liefert, vermutlich das Komma als Trennzeichen zwischen Euro und Cent.
 
-![Vorderseite](./getting-started/Vorderseite Punkt.jpg)
+![Vorderseite](./getting-started/Vorderseite%20Punkt.jpg)
 
 Zubehör
 ===
