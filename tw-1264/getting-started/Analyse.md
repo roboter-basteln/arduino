@@ -79,3 +79,22 @@ Es erscheint sinnig, dass auf `JP1` lauter Eingänge `A` und auf `JP2` lauter Au
 
 Es scheint als lägen bei beiden Puffern `G1` und `G2` dauerhaft auf `GND`, womit der dritte Ausgangsstatus (`Z`, high impedance) nie benutzt wird. Somit wird der Eingang `A` immer invertiert an den Ausgang `Y` übergeben.
 
+Von den Ausgängen des Pufferbausteins gibt es Verbindungen zum Seriellwandler:
+
+Input U1 Pin 3 (`2Y4`) - U3 Pin 13 (`SRCK`)
+Input U1 Pin 5 (`2Y3`) - U3 Pin 3 (`SERIN`)
+Input U1 Pin 7 (`2Y2`) - U3 Pin 9 (`G`)
+Input U1 Pin 9 (`2Y1`) - U3 Pin 12 (`RCK`)
+
+Und plötzlich schließt sich der Kreis:
+
+Input JP1 Pin 2 liegt auf `U1 1A1`. Dieser wird invertiert auf `U1 1Y1` ausgegeben. `U1 1Y1` ist direkt mit seinem Nachbarn `U1 2A4` verbunden, der wiederum invertiert auf `U1 2Y4` ausgegeben wird. `U1 2Y4` liegt auf `U3 SRCK`.
+
+Ketten:
+
+* Input JP1 Pin 2 - U1 1A1 1Y1 1A4 2Y4 - U3 SRCK
+* Input JP1 Pin 3 - U1 1A3 1Y3 2A2 2Y2 - U3 G
+* Input JP1 Pin 4 - U1 1A2 1Y2 2A3 2Y3 - U3 SERIN
+* Input JP1 Pin 7 - U1 1A4 1Y4 2A1 2Y1 - U3 RCK
+
+Die doppelte Invertierung sorgt dafür, dass das Signal "normal" beim Wandler ankommt.
