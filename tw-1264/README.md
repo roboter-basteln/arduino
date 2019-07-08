@@ -38,6 +38,11 @@ Auf der offiziellen Arduino Webseite gibt es ein [Tutorial zur Ansteuerung des 7
 
 Der erste Code dient zum [Ermitteln der Segmentbelegung](tw1264-bitshift/tw1264-bitshift.ino).
 
+Anhand dieses Tests kann dann die Wertigkeit der Segmente bestimmt werden:
+
+![Wertigkeit der Segmente](getting-started/Wertigkeit.png)
+
+Dann können die Segmente zusammengezählt werden, um damit [Ziffern zu bilden](tw1264-numbers/tw1264-numbers.ino).
 
 Mögliches Zubehör
 ===
