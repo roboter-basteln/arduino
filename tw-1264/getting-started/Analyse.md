@@ -44,36 +44,37 @@ Leider ist keiner dieser Pins mit einem Anschluss (`JPx`) verbunden.
 
 Mit dem Multimeter habe ich jedoch folgende Verbindungen gefunden:
 
-![Vorderseite](Seriell-Wandler V.jpg)
+![Vorderseite](Seriell-Wandler%20V.jpg)
 
-![Rückseite](Seriell-Wandler R.jpg)
+![Rückseite](Seriell-Wandler%20R.jpg)
 
 Puffer
 ===
 
 Mit dem Durchgangsprüfer sind folgende Verbindungen zum Pufferchip ([Datenblatt HD74HC240P](hd74hc240p.pdf)) zu erkennen:
 
-Input JP1 Pin 1 - U1 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
-Input JP1 Pin 2 - U1 Pin 2 (`1A1`)
-Input JP1 Pin 3 - U1 Pin 6 (`1A3`)
-Input JP1 Pin 4 - U1 Pin 4 (`1A2`)
-Input JP1 Pin 5 - N/V
-Input JP1 Pin 6 - N/V
-Input JP1 Pin 7 - U1 Pin 8 (`1A4`)
-Input JP1 Pin 8 - N/V
-Input JP1 Pin 9 - N/V
-Input JP1 Pin 10 - U1 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
+- Input JP1 Pin 1 - U1 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
+- Input JP1 Pin 2 - U1 Pin 2 (`1A1`)
+- Input JP1 Pin 3 - U1 Pin 6 (`1A3`)
+- Input JP1 Pin 4 - U1 Pin 4 (`1A2`)
+- Input JP1 Pin 5 - N/V
+- Input JP1 Pin 6 - N/V
+- Input JP1 Pin 7 - U1 Pin 8 (`1A4`)
+- Input JP1 Pin 8 - N/V
+- Input JP1 Pin 9 - N/V
+- Input JP1 Pin 10 - U1 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
 
-Output JP2 Pin 1 - U2 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
-Output JP2 Pin 2 - U2 Pin 3 (`2Y4`)
-Output JP2 Pin 3 - U2 Pin 7 (`2Y2`)
-Output JP2 Pin 4 - U2 Pin 5 (`2Y3`)
-Output JP2 Pin 5 - N/V
-Output JP2 Pin 6 - N/V
-Output JP2 Pin 7 - U2 Pin 9 (`2Y1`)
-Output JP2 Pin 8 - N/V
-Output JP2 Pin 9 - N/V
-Output JP2 Pin 10 - U2 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
+
+- Output JP2 Pin 1 - U2 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
+- Output JP2 Pin 2 - U2 Pin 3 (`2Y4`)
+- Output JP2 Pin 3 - U2 Pin 7 (`2Y2`)
+- Output JP2 Pin 4 - U2 Pin 5 (`2Y3`)
+- Output JP2 Pin 5 - N/V
+- Output JP2 Pin 6 - N/V
+- Output JP2 Pin 7 - U2 Pin 9 (`2Y1`)
+- Output JP2 Pin 8 - N/V
+- Output JP2 Pin 9 - N/V
+- Output JP2 Pin 10 - U2 Pin 1 (`GND`), 10 (`1G`) und 19 (`2G`)
 
 Es erscheint sinnig, dass auf `JP1` lauter Eingänge `A` und auf `JP2` lauter Ausgänge `Y` belegt sind.
 
@@ -81,10 +82,10 @@ Es scheint als lägen bei beiden Puffern `G1` und `G2` dauerhaft auf `GND`, womi
 
 Von den Ausgängen des Pufferbausteins gibt es Verbindungen zum Seriellwandler:
 
-Input U1 Pin 3 (`2Y4`) - U3 Pin 13 (`SRCK`)
-Input U1 Pin 5 (`2Y3`) - U3 Pin 3 (`SERIN`)
-Input U1 Pin 7 (`2Y2`) - U3 Pin 9 (`G`)
-Input U1 Pin 9 (`2Y1`) - U3 Pin 12 (`RCK`)
+* Input U1 Pin 3 (`2Y4`) - U3 Pin 13 (`SRCK`)
+* Input U1 Pin 5 (`2Y3`) - U3 Pin 3 (`SERIN`)
+* Input U1 Pin 7 (`2Y2`) - U3 Pin 9 (`G`)
+* Input U1 Pin 9 (`2Y1`) - U3 Pin 12 (`RCK`)
 
 Und plötzlich schließt sich der Kreis:
 
@@ -98,3 +99,10 @@ Ketten:
 * Input JP1 Pin 7 - U1 1A4 1Y4 2A1 2Y1 - U3 RCK
 
 Die doppelte Invertierung sorgt dafür, dass das Signal "normal" beim Wandler ankommt.
+
+Spannungsversorgung
+===
+
+Ich habe mit 7 Volt Spannungsversorgung begonnen und festgestellt, dass nur sehr wenige LEDs leuchten. Der einfach zu analysierende Dezimalpunkt TW-1222, bei dem einfach vier weiße LEDs in Reihe geschaltet sind, brachte mich dann auf die Idee, die Spannung zu erhöhen (Schwellenspannung weiße LED ca. 3 V * 4 = 12 V).
+
+Eine langsame Erhöhung der Spannung zeigte, dass die LEDs bei 12 V gut leuchten.

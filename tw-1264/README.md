@@ -14,7 +14,9 @@ Dazu gibt es eine Platine mit der Bezeichnung TW-1222, die einen Punkt aus 4 LED
 Belegung
 ===
 
-Wie ich dazu kam, steht in der [Analyse](./getting-started/Analyse.md).
+Spannungsversorgung: 12 V
+
+Signal: 5 V (Arduino-tauglich)
 
 * JP1 ("Input") Pin 1: `GND`
 * JP1 ("Input") Pin 2: `SRCK`
@@ -26,6 +28,16 @@ Wie ich dazu kam, steht in der [Analyse](./getting-started/Analyse.md).
 * JP1 ("Input") Pin 8: ?
 * JP1 ("Input") Pin 9: ?
 * JP1 ("Input") Pin 10: `GND`
+
+Wie ich dazu kam, steht in der [Analyse](./getting-started/Analyse.md).
+
+Code
+===
+
+Auf der offiziellen Arduino Webseite gibt es ein [Tutorial zur Ansteuerung des 74HC595](https://www.arduino.cc/en/Tutorial/ShiftOut), der dem hier verbauten TPIC6B595N ähnlich ist.
+
+Der erste Code dient zum [Ermitteln der Segmentbelegung](tw1264-bitshift/tw1264-bitshift.ino).
+
 
 Mögliches Zubehör
 ===
