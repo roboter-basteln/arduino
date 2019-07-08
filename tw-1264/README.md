@@ -14,7 +14,9 @@ Dazu gibt es eine Platine mit der Bezeichnung TW-1222, die einen Punkt aus 4 LED
 Belegung
 ===
 
-Wie ich dazu kam, steht in der [Analyse](./getting-started/Analyse.md).
+Spannungsversorgung: 12 V
+
+Signal: 5 V
 
 * JP1 ("Input") Pin 1: `GND`
 * JP1 ("Input") Pin 2: `SRCK`
@@ -26,6 +28,8 @@ Wie ich dazu kam, steht in der [Analyse](./getting-started/Analyse.md).
 * JP1 ("Input") Pin 8: ?
 * JP1 ("Input") Pin 9: ?
 * JP1 ("Input") Pin 10: `GND`
+
+Wie ich dazu kam, steht in der [Analyse](./getting-started/Analyse.md).
 
 Mögliches Zubehör
 ===
